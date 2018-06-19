@@ -11,9 +11,6 @@ alias etodo='vim ~/.todo'
 alias memo='cat ~/.memo'
 alias ememo='vim ~/.memo'
 
-# alias raspi='ssh -l pi 150.46.5.116'
-alias raspi='ssh -l naoki 150.46.5.116'
-
 alias cdg='cd ~/git'
 alias python='python3'
 
