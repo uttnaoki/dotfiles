@@ -35,3 +35,4 @@ alias g_ls='git ls-files -v | grep "h "'
 alias rmdump='rm ~/.zcompdump; rm $ZPLUG_HOME/zcompdump'
 
 . ~/.aliases/alias4scripts
+. ~/.tmp_aliases
