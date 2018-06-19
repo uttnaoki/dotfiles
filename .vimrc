@@ -1,0 +1,9 @@
+syntax on
+colorscheme atom-dark
+set t_Co=256
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set autoindent
+set smartindent
