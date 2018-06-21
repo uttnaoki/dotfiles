@@ -16,7 +16,7 @@ fi
 echo $OS' terminal'
 
 # Mac の場合，Mac ディレクトリを参照
-if [ $OS -e "Mac" ]; then
+if [ $OS == "Mac" ]; then
   for f in Mac/.??*
   do
     [[ "$f" == ".DS_Store" ]] && continue
