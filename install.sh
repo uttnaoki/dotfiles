@@ -17,7 +17,7 @@ echo $OS' terminal\n'
 
 # ホームディレクトリに dotfile のリンクを貼る．
 function link_dotfile_to_home() {
-  for f in $1/.??*
+  for f in $1.??*
   do
     # ファイルの絶対パスを取得
     dotfile_path=$HOME/dotfiles/$f
@@ -32,7 +32,7 @@ function link_dotfile_to_home() {
     # ファイルのリンクが既に貼られていれば skip
     if [ -h $HOME/$dotfile_name ]; then
       echo "[skip] "$dotfile_name
-      # ファイルのリンクが既に貼られていなければ，シンボリックリンクを貼る．
+    # ファイルのリンクが既に貼られていなければ，シンボリックリンクを貼る．
     else
       ln -s $dotfile_path $HOME/$dotfile_name
       echo "[OK] "$dotfile_name
@@ -42,8 +42,8 @@ function link_dotfile_to_home() {
 
 # 各OS(ターミナル)に応じて dotfile のリンクを貼る．
 if [ ! $OS = "undefined" ]; then
-  link_dotfile_to_home $OS
+  link_dotfile_to_home $OS"/"
 fi
 
 # 各OS(ターミナル)共通の dotfile のリンクを貼る．
-link_dotfile_to_home "."
+link_dotfile_to_home ""

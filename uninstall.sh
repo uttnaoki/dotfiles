@@ -29,7 +29,6 @@ function remove_link() {
     [ "$dotfile_name" = ".gitignore" ] && continue
     [ "$dotfile_name" = ".DS_Store" ] && continue
 
-    echo $dotfile_path
     # ファイルのリンクが既に貼られていれば，ホームディレクトリのリンクを削除
     if [ -h $HOME/$dotfile_name ]; then
       rm $HOME"/"$dotfile_name
