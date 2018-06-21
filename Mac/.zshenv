@@ -7,3 +7,5 @@ eval "$(pyenv init -)"
 
 # ssh key の追加
 ssh-add -K ~/.ssh/github 2> /dev/null
+
+alias ls='ls -G'

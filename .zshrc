@@ -1,7 +1,6 @@
 # 規定のエディタをVimに変更
 export EDITOR=vim
 
-# alias ls='ls -G'
 alias zshrc='vim ~/.zshrc'
 alias rc='vim ~/.zshrc'
 alias ushell='source ~/.zshrc'
