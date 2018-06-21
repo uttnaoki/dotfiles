@@ -31,7 +31,7 @@ function remove_link() {
 
     # ファイルのリンクが既に貼られていれば，ホームディレクトリのリンクを削除
     if [ -h $HOME/$dotfile_name ]; then
-      rm $HOME"/"$dotfile_name
+      unlink $HOME"/"$dotfile_name
       echo "[OK] "$dotfile_name
     # ファイルのリンクが貼られていなければ skip
     else
