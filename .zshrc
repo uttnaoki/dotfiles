@@ -1,5 +1,5 @@
-# PROMPT="%{$fg[cyan]%}%~
-# %{${reset_color}%}$ "
+# 規定のエディタをVimに変更
+export EDITOR=vim
 
 alias ls='ls -G'
 alias zshrc='vim ~/.zshrc'
