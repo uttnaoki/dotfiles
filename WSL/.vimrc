@@ -2,6 +2,11 @@ syntax on
 colorscheme molokai
 set t_Co=256
 
+" 日本語の文字化け対策
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
+
 " setting
 "文字コードをUFT-8に設定
 set fenc=utf-8
