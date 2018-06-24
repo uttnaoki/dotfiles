@@ -1,6 +1,9 @@
 # 規定のエディタをVimに変更
 export EDITOR=vim
 
+# 文字コード周り
+#export LANG=ja_JP.UTF-8
+
 alias zshrc='vim ~/.zshrc'
 alias rc='vim ~/.zshrc'
 alias ushell='source ~/.zshrc'
@@ -12,6 +15,7 @@ alias ememo='vim ~/.memo'
 
 alias cdg='cd ~/git'
 alias python='python3'
+alias dotfiles='cd ~/dotfiles'
 
 # git コマンドを短縮
 alias ga='git add'
@@ -22,6 +26,7 @@ alias gp='git push'
 alias gpom='git push origin master'
 alias gs='git status'
 alias gl='git log'
+alias gd='git diff'
 alias grs='git reset --soft HEAD^'
 alias grh='git reset --hard HEAD^'
 alias g_unchanged='git update-index --assume-unchanged'

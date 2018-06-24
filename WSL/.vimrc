@@ -7,6 +7,8 @@ set encoding=utf-8
 set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 set fileformats=unix,dos,mac
 
+set clipboard=unnamed,autoselect
+
 " setting
 "文字コードをUFT-8に設定
 set fenc=utf-8
