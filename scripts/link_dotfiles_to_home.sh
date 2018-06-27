@@ -14,10 +14,13 @@ do
 
   # ファイルのリンクが既に貼られていれば skip
   if [ -h $HOME/$dotfile_name ]; then
-    echo "[skip] "$dotfile_name
+    echo "[\033[36mskip\033[0m] "$dotfile_name
+  # ファイルの実体(!=リンク)があれば，NG を出力
+  elif [ -e $HOME"/"$dotfile_name ]; then
+    echo "[\033[31mNG\033[0m] "$dotfile_name
   # ファイルのリンクが既に貼られていなければ，シンボリックリンクを貼る．
   else
     ln -s $dotfile_path $HOME/$dotfile_name
-    echo "[OK] "$dotfile_name
+    echo "[\033[32mOK\033[0m] "$dotfile_name
   fi
 done
