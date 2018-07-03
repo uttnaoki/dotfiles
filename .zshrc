@@ -10,8 +10,6 @@ alias ushell='source ~/.zshrc'
 
 alias todo='cat ~/.todo'
 alias etodo='vim ~/.todo'
-alias memo='cat ~/.memo'
-alias ememo='vim ~/.memo'
 
 alias cdg='cd ~/git'
 alias python='python3'
