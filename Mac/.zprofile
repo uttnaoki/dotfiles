@@ -35,3 +35,9 @@ setopt ignoreeof
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+
+# memoコマンドのソースを読み込む
+. ~/.scripts/memo.sh
+
+alias tabletool="open -a Table\ Tool"
+alias cdmc="cd ~/Library/Application\ Support/minecraft"

@@ -1,1 +1,0 @@
-/Users/naoki/dotfiles/.vim
