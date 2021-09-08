@@ -1,0 +1,95 @@
+[
+  // コメントアウト
+  {
+    "key": "ctrl+/",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  // 保存
+  {
+    "key": "ctrl+s",
+    "command": "workbench.action.files.save"
+  },
+  // コピー
+  {
+    "key": "ctrl+c",
+    "command": "editor.action.clipboardCopyAction",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  // ペースト
+  {
+    "key": "ctrl+v",
+    "command": "editor.action.clipboardPasteAction",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  // 一行カット
+  {
+    "key": "ctrl+k",
+    "command": "editor.action.clipboardCutAction",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  // duplicate
+  {
+    "key": "ctrl+shift+d",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  // undo
+  {
+    "key": "ctrl+u",
+    "command": "undo",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  // redo
+  {
+    "key": "ctrl+shift+u",
+    "command": "redo",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  // 行移動（Up）
+  {
+    "key": "cmd+p",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  // 行移動（Down）
+  {
+    "key": "cmd+n",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  // quickOpen (cmd+p -> ctrl+shift+o)
+  {
+    "key": "ctrl+shift+o",
+    "command": "workbench.action.quickOpen"
+  },
+  // newUntitledFile (cmd+n -> shift+cmd+n)
+  {
+    "key": "shift+cmd+n",
+    "command": "workbench.action.files.newUntitledFile"
+  },
+  // 選択範囲拡張（下）
+  {
+    "key": "ctrl+shift+n",
+    "command": "cursorDownSelect",
+    "when": "textInputFocus"
+  },
+  // 選択範囲拡張（上）
+  {
+    "key": "ctrl+shift+p",
+    "command": "cursorUpSelect",
+    "when": "textInputFocus"
+  },
+  // 選択範囲拡張（右）
+  {
+    "key": "ctrl+shift+f",
+    "command": "cursorRightSelect",
+    "when": "textInputFocus"
+  },
+  // 選択範囲拡張（左）
+  {
+    "key": "ctrl+shift+b",
+    "command": "cursorLeftSelect",
+    "when": "textInputFocus"
+  }
+]
