@@ -1,58 +1,51 @@
-# 規定のエディタをVimに変更
-export EDITOR=vim
+# zplug
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
-# 文字コード周り
-#export LANG=ja_JP.UTF-8
+# theme
+zplug mafredri/zsh-async, from:github
+zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+
+# 移動系
+  # 前提
+  zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
+  zplug "junegunn/fzf", as:command, use:bin/fzf-tmux
+zplug "b4b4r07/enhancd", use:init.sh
+
+# コマンドに色を付ける
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+  printf "Install? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  fi
+fi
+# Then, source plugins and add commands to $PATH
+zplug load
+
+# 補完
+autoload -Uz compinit && compinit
+
+# history 関係
+export LANG=ja_JP.UTF-8
+HISTFILE=$HOME/.zsh-history
+HISTSIZE=1000000
+SAVEHIST=1000000
+setopt share_history
+
+
+################################################################
+
+alias ls='ls -G'
 
 alias zshrc='vim ~/.zshrc'
-alias zshenv='vim ~/.zshenv'
-alias zprofile='vim ~/.zprofile'
 alias szh='source ~/.zshrc'
 
-alias cdg='cd ~/git'
-alias dotfiles='cd ~/dotfiles'
+alias memo='cat ~/tmp/memo.txt'
+alias ememo='vim ~/tmp/memo.txt'
 
-alias la='ls -a'
-
-# git コマンドを短縮
-alias ga='git add'
-alias ga.='git add .'
-alias gam='git commit -a -m'
-alias gm='git commit'
-alias gp='git push'
-alias gpull='git pull'
-alias gpom='git push origin master'
+# git
 alias gs='git status'
-alias gl='git log --oneline'
-alias gd='git diff'
-alias grs='git reset --soft HEAD^'
-alias grh='git reset --hard HEAD^'
-alias g_unchanged='git update-index --assume-unchanged'
-alias g_unchanged_undo='git update-index --no-assume-unchanged'
-alias g_ls='git ls-files -v | grep "h "'
-
-# 同時に起動したzshの間でヒストリを共有
-#setopt share_history
-
-alias rmdump='rm ~/.zcompdump; rm $ZPLUG_HOME/zcompdump'
-
-. ~/.aliases/alias4scripts
-. ~/.tmp_aliases
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/naoki/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/naoki/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/naoki/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/naoki/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
-alias ocimemo='vi /Users/naoki/Desktop/Oracle/oci_memo.txt'
-
-# rbenv用
-eval "$(rbenv init -)"
-
-# Android SDK
-export ANDROID_SDK=/Users/naoki/Library/Android/sdk
-export PATH=$ANDROID_SDK/platform-tools:$PATH
-
-# ctrl+系のコマンドを実行するため
-bindkey -e
+alias gl='git log'
